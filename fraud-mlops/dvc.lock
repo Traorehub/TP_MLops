@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/transactions.csv
       hash: md5
-      md5: 758a5a69a84269ebae16b70aaa1058ea
-      size: 3442976
+      md5: 72aa507598dd4f36a7b178e83dbfb48a
+      size: 3483627
     - path: src/features.py
       hash: md5
       md5: 6c428b44b310a370c73992f1e07ff087
@@ -18,30 +18,30 @@ stages:
     params:
       params.yaml:
         model:
-          n_estimators: 200
-          max_depth: 8
+          n_estimators: 300
+          max_depth: 9
         seed: 42
         test_size: 0.25
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 3cce8bb79faf730f436cd3e986b018af
-      size: 3657169
+      md5: 565253abda5747368029244303cbe84c
+      size: 6649037
     - path: models/run_info.json
       hash: md5
-      md5: c116844d3dac68920c5b3bdffb223821
+      md5: c05dc397e21d7e1938c99c364c0fc497
       size: 105
   evaluate:
     cmd: python src/evaluate.py
     deps:
     - path: data/transactions.csv
       hash: md5
-      md5: 758a5a69a84269ebae16b70aaa1058ea
-      size: 3442976
+      md5: 72aa507598dd4f36a7b178e83dbfb48a
+      size: 3483627
     - path: models/model.pkl
       hash: md5
-      md5: 3cce8bb79faf730f436cd3e986b018af
-      size: 3657169
+      md5: 565253abda5747368029244303cbe84c
+      size: 6649037
     - path: src/evaluate.py
       hash: md5
       md5: fe6a386f03a126c07d2a2cffffc55a99
@@ -60,5 +60,5 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: 38f96fadca473e01ca6134a2ee21072d
+      md5: 218daf28d5a48d4276b1b0247b7f0159
       size: 131
